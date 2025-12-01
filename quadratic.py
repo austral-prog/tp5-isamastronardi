@@ -48,17 +48,17 @@ print(f"Retorna: {ecuacion_final}")
 
 def derivation(a, b, c):
     resultado_3 = ""
+    a = int(a)
+    b= int(b)
     if a != 0:
-        a1 = f"{2 * a} * X"
-        resultado_3 = a1
-        if b != 0:
-            b1=f" + {1*b}"
-            resultado_3 = resultado_3 +b1
+        resultado_3 += f"{2 * a} * X"
+    if b != 0:
+        if resultado_3=="":
+            resultado_3 = f"{b}"
         else:
-            resultado_3 = resultado_3
-    else:
-        b1=f"{1*b}"
-        resultado_3 = b1
+            resultado_3 +=f" + {b}"
+    if resultado_3 == "":
+        resultado_3 = 0
     return f"f'(x) = {resultado_3}"
 ecuacion_ultima = derivation(4, 3, 2)
 print(f"Retorna: {ecuacion_ultima}")
